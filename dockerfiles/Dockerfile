@@ -1,6 +1,6 @@
 FROM jekyll/jekyll:3.8
 RUN apk update && apk add --no-cache supervisor
-COPY supervisord.conf /etc/supervisord.conf
+COPY ./supervisord.conf /etc/supervisord.conf
 
 WORKDIR /srv/jekyll
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
